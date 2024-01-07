@@ -2,8 +2,11 @@
   
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
  
-  :root {--container-padding: 4.8rem;
-  }
+  :root {
+    --container-padding: 4.8rem;
+    --title:  rgb(199, 20, 104);
+    --sub-title: rgb(32, 32, 32);
+  } 
   
 
 
@@ -25,7 +28,9 @@
     list-style: none;
   }
 
-  
+  button{
+    all: unset;
+  }
   .container {
     border: 2px solid  rgba(63, 63, 70, 0.4);
     width: 90%;
@@ -43,6 +48,14 @@
     width: calc(100% + var(--container-padding) + var(--container-padding));
     margin-left: calc(var(--container-padding) * -1);
   }
+
+/*========================
+- responsive
+-------------------------*/
+
+
+
+
 
   @media (max-width: 1000px) {
     .container {

@@ -1,37 +1,52 @@
 import Navig from '../navigation/Navig'
-import './Journées.css'
+import './inscription/insscrip.css'
 
 function Contact() {
   return (
     <div>
       <Navig/>
-    <section className="contact-us ">
+      <section className="contact-us">
       <h1 className="title">
-        <span className="icon-envelope"></span>
+        <span className="icon-envelope"> </span>
         Contact us
       </h1>
-  
       <p className="sub-title">
-        Contact us for more information and get notified when I publish something new.
+        Contact us for more information and Get notified when I publish
+        something new.
       </p>
-  
-      <div className="flex">
-        <form className="form">
-          
-          <div className="form-field" style={{ marginTop: "24px" }}>
+
+      <div style={{ justifyContent: "space-between" }} className="flex">
+        <form className="border">
+          <div className="flex">
             <label htmlFor="email">Email Address:</label>
-            <input required type="email" name="email" id="email" placeholder="example@example.com" />
+            <input
+              autoComplete="off"
+              required
+              type="email"
+              name="email"
+              id="email"
+            />
+          
           </div>
-  
-          <div className="form-field flex" style={{ marginTop: "24px" ,alignItems:"center" }}>
+
+          <div className="flex" style={{ marginTop: "24px" }}>
             <label htmlFor="message">Your message:</label>
-            <textarea required name="message" id="message" placeholder="Type your message here"></textarea>
+            <textarea required name="message" id="message"></textarea>
+           
           </div>
-  
-          <button className="submit">Submit</button>
+
+          <button type="submit" className="submit">
+           submit
+          </button>
+
+          
+          
         </form>
-      </div>
+      
+        </div>
+   
     </section>
+  
   </div>
   )
 }

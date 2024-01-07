@@ -1,10 +1,10 @@
 
 
 import Acceuil from './componentrs/acceuil/Acceuil'
-import Insscrip from './componentrs/journées/Insscrip';
+import Insscrip from './componentrs/journées/inscription/Insscrip';
 import Contact from './componentrs/journées/Contact';
 
-import Journées from './componentrs/journées/Journées'
+import Journées from './componentrs/journées/presentation/Journées'
 
 import { Route,Routes } from "react-router-dom";
 import Footer from './componentrs/footer/Footer';

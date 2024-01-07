@@ -1,6 +1,6 @@
 
 import './Journées.css'
-import Navig from '../navigation/Navig'
+import Navig from '../../navigation/Navig'
 
 
 function Journées() {

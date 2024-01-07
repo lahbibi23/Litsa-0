@@ -1,0 +1,51 @@
+.slide-container{
+    margin: 2rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+img{
+    width: 100%;
+    border-radius: 5px;
+}
+.presentation{
+    margin: 2rem;
+    width: 90%;
+    padding: 1rem 0.4rem; 
+    text-transform: capitalize;
+}
+
+  /* =====================================
+    3- Responsive Design (media query)
+  ======================================== */
+  
+  @media (max-width: 600px) {
+    section.contact-us .animation {
+      display: none;
+    }
+  
+    section.contact-us form {
+      display: flex;
+      flex-direction: column;
+      width: 85%;
+    }
+  
+    section.contact-us form div.flex {
+      flex-direction: column;
+      align-items: start;
+    }
+  
+    section.contact-us #email,
+    section.contact-us #message,
+    section.contact-us #fullName {
+      width: 100%;
+      margin-left: 0;
+      padding: 0.7rem 0;
+      margin-top: 1rem;
+    }
+  
+    section.contact-us .submit {
+      width: 30%;
+      align-self: center;
+    }
+  }

@@ -10,30 +10,42 @@
     1. Header Design
 =========================== */
 header.flex {
-    justify-content: space-between;
+    /* justify-content: space-between;
     padding: 0 2.4rem;
     margin-top: 1.2rem;
     align-items: center;
-   
+    margin-top: 1px; */
+   border: 1px solid rgb(173 ,197,213);
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 2.4rem;
+   margin-top: 0.5rem;
+   border-radius: 20px;
+  
   }
   
   header.flex nav {
-    background-color: #ebe5dd;
+    /* background-color: #fdfdfd;
+    border: 1px solid rgb(173,197,213) ;
     padding: 0.77rem 1.6rem;
     border-radius: 55px;
-    box-shadow: 1px 1px 40px #2323242a;
-    /* background-color: rgba(46,54,163); */
+    box-shadow: 1px 1px 40px #2323242a;                                                                                                                                                                                                                  */
+ 
+ padding: 0.77rem 1.6rem; 
   }
   
   header ul.flex {
-    gap: 16px;
+    /* gap: 16px; */
+    gap:20px;
+    text-align: center;
   }
   
   header ul li a {
-    color: var(--title);
+    color: black;
     opacity: 0.9;
     font-size: 0.88rem;
     font-weight: 500;
+
   }
   
   header ul li a:hover {
@@ -49,9 +61,9 @@ header.flex {
   header button.menu {
     display: none;
   }
-    img{
-      width: 80px;
-      height: 80px;
+    header img{
+      width:40%;
+   
     }
   /* ========================
       2. Button & icon
@@ -66,20 +78,20 @@ header.flex {
     justify-content: center;
     text-align: center;
   
-    color: var(--subtitle);
+    color: black;
     border: 1px solid rgba(244, 165, 96, 0.249);
     transition: 0.2s;
   }
   
   header .icon-menu:hover,
   header button.mode:hover {
-    color: var(--title);
+    color:black;
     border: 1px solid rgb(244, 165, 96);
   }
   
   header .icon-close {
     font-size: 1.5rem;
-    color: var(--subtitle);
+    color: black;
     transition: 0.3s;
   }
   

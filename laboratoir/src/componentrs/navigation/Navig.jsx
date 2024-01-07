@@ -7,15 +7,17 @@ function Navig() {
   return (
 
   
-      <header className="flex">
+      <header className="flex ">
         <button onClick={() => {
           setshowModal(true)
         }} className="menu icon-menu flex">    </button>
            <div>
             <img src="/images/logo.png" alt="gjyjh" />
            </div>
+          
+           
 
-        <nav>
+        <nav className="">
           <ul className="flex">
           <li>
                 <a href="/">Acceuil</a>
@@ -25,8 +27,12 @@ function Navig() {
               </li>
               <li className="dropdown">
                 <a href="premiere edition">Les journées</a>
+            
+
+    
                 <div className="dropdown-content">
                   <ul>
+                    
                     <li><a href="premiere edition">Présentation</a></li>
                     <li><a href="">programme</a></li>
                     <li><a href="">comitès</a></li>
@@ -39,9 +45,10 @@ function Navig() {
                 <a href="contact">contacter Nous</a>
               </li>
           </ul>
+        
         </nav>
 
-      
+     
 
         {showModal && (
           <div className="fixed">
