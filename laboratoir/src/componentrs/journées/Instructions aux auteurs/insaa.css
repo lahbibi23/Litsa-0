@@ -1,0 +1,30 @@
+
+
+ .instruction{
+   margin-top: 30px;
+   width: 90%;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 1rem;
+   font-size: 0.9rem;
+   font-style: italic;
+ }
+
+ button.download{
+  background-color: rgb(134, 138, 180);
+  margin-left: 40%;
+  width: 6rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-top: 1rem; 
+  border: 1px solid rgb(234, 234, 238);
+  font-weight:bold ;
+ }
+ button.download:hover{
+  scale: 0.97;
+  cursor: pointer;
+  }
+ 

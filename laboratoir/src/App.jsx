@@ -3,24 +3,34 @@
 import Acceuil from './componentrs/acceuil/Acceuil'
 import Insscrip from './componentrs/journées/inscription/Insscrip';
 import Contact from './componentrs/journées/Contact';
-
+import Hero from './componentrs/acceuil/hero/Hero'
 import Journées from './componentrs/journées/presentation/Journées'
 
 import { Route,Routes } from "react-router-dom";
 import Footer from './componentrs/footer/Footer';
+import Accmain from './componentrs/acceuil/accmain/Accmain';
+import Manifestations from './componentrs/manifestations/Manifestations';
+import Appel from './componentrs/journées/appel/Appel';
+import Insaa from './componentrs/journées/Instructions aux auteurs/Insaa';
 function App() {
   return (
     <div className='container'> 
-    
-   <Routes>
+     <Routes>
     <Route path='/' element={<Acceuil/>}/>
+    <Route path='actualités' element={<Hero/>}/>
+    <Route path='Présentation' element={<Accmain/>}/>
     <Route path='premiere edition' element={<Journées/>}/>
     <Route path='inscription' element={ <Insscrip/>}/>
     <Route path='contact' element={<Contact/>}/>
+    <Route path='participation'   element={<Appel/>} />
+    <Route path='Manifestations' element={<Manifestations/>}/>
+    <Route path='Instructions aux auteurs' element={<Insaa/>}/>
+
    </Routes>
   
-   <div className="divider" />
-   <Footer/>
+    <div className="divider"  style={{marginTop:"10rem",marginBottom:"1rem"}} />
+    <Footer/>
+
 
       
     </div>

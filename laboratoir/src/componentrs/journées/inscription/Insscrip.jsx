@@ -7,6 +7,8 @@ import { useForm, ValidationError } from '@formspree/react';
 function Insscrip() {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [fullName, setFullName] = useState('');
+  const [fonction, setFonction] = useState('');
+  const [université, setUniversité] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('');
   const [theme, setTheme] = useState('');
   const [communicationMethod, setCommunicationMethod] = useState('');
@@ -15,8 +17,8 @@ function Insscrip() {
   const [state, handleSubmitFormspree] = useForm("xgegeqpj")
   if (state.succeeded) {
     return <p>Thanks for joining!</p>;
-}
-  
+  }
+
   const onDrop = (acceptedFiles) => {
     setSelectedFiles(acceptedFiles);
   };
@@ -28,6 +30,8 @@ function Insscrip() {
 
     const formData = new FormData();
     formData.append('fullName', fullName);
+    formData.append('fonction', fonction)
+    formData.append('université', université)
     formData.append('phoneNumber', phoneNumber);
     formData.append('theme', theme);
     formData.append('communicationMethod', communicationMethod);
@@ -42,8 +46,9 @@ function Insscrip() {
       if (response.ok) {
         setSubmissionMessage('Votre formulaire a été soumis avec succès !');
         console.log('Formulaire envoyé avec succès !');
-        // Réinitialiser les champs et les fichiers sélectionnés après l'envoi du formulaire
         setFullName('');
+        setFonction('')
+        setUniversité('')
         setPhoneNumber('');
         setTheme('');
         setCommunicationMethod('');
@@ -60,70 +65,115 @@ function Insscrip() {
   return (
     <div>
       <Navig />
-      <section className="contact-us border ">
-        <h1 className="title">
-          <span className="icon-envelope"></span>
-          Inscription
-        </h1>
 
-        <p className="sub-title border ">
-          Contact us for more information and get notified when I publish something new.
-        </p>
+      <div className="divider"  style={{marginTop:"5rem",marginBottom:"1rem"}} />
+         <div  className="tittle "> Formulaire d'inscription (à renseigner soigneusement)</div> 
+       <div className="divider"  style={{marginTop:"2rem",marginBottom:"1rem"}} />
 
-        <form className="form border " onSubmit={handleSubmit}>
-          <div className="form-field border">
-            <label htmlFor="fullName">Full Name:</label>
-            <input autoComplete="off" required type="text" name="fullName" id="fullName" value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="John Doe" />
+
+
+      <section className="contact-us  ">
+      {/* nom et prénom */}
+
+        <form className="form  " onSubmit={handleSubmit}>
+          <div className="form-field flex">
+            <label htmlFor="fullName">Nom et Prénom:</label>
+            <input autoComplete="off" required type="text" name="fullName" id="fullName" value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Nom et prénom" />
           </div>
-          <div className="form-field border">
-            <label htmlFor="phoneNumber">Numéro de téléphone:</label>
-            <input required type="text" name="phoneNumber" id="phoneNumber" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} placeholder="0123456789" />
-          </div>
-          <div className="form-checkbox border">
-            <div style={{ fontWeight: 'bold' }}>Thème</div>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <label htmlFor="theme1">Theme 1</label>
-              <input type="radio" id="theme1" name="theme" value="Theme 1" onChange={(e) => setTheme(e.target.value)} />
-              <label htmlFor="theme2">Theme 2</label>
-              <input type="radio" id="theme2" name="theme" value="Theme 2" onChange={(e) => setTheme(e.target.value)} />
-              <label htmlFor="theme3">Theme 3</label>
-              <input type="radio" id="theme3" name="theme" value="Theme 3" onChange={(e) => setTheme(e.target.value)} />
-            </div>
-          </div>
-          <div className="form-checkbox border">
-            <div style={{ fontWeight: 'bold' }}>Communication</div>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <label htmlFor="oral">Orale</label>
-              <input type="radio" id="oral" name="communicationMethod" value="Orale" onChange={(e) => setCommunicationMethod(e.target.value)} />
-              <label htmlFor="display">Affichage</label>
-              <input type="radio" id="display" name="communicationMethod" value="Affichage" onChange={(e) => setCommunicationMethod(e.target.value)} />
-            </div>
-          </div>
-          <div className="form-field border">
+
+          {/* mail */}
+
+          <div className="form-field flex">
             <label htmlFor="email">Email Address:</label>
             <input autoComplete="off" required type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="example@example.com" />
           </div>
-          <ValidationError 
-        prefix="Email" 
-        field="email"
-        errors={state.errors}
-      />
-          <div className="flex fichier border">
-            <span>
-              <h3>Fichier à soumettre</h3>
-            </span>
-            <div {...getRootProps()} className="dropzone border">
-              <input {...getInputProps()} />
-              <button type="button" className="submit">Cliquez ici pour sélectionner des fichiers</button>
+          <ValidationError
+            prefix="Email"
+            field="email"
+            errors={state.errors}
+          />
+
+          {/* numéro de téléphone */}
+
+
+
+          <div className="form-field flex">
+            <label htmlFor="phoneNumber">Numéro de téléphone:</label>
+            <input required type="text" name="phoneNumber" id="phoneNumber" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} placeholder=" +216  123456789" />
+          </div>
+
+
+
+
+
+
+
+          {/* fonction  */}
+          <div className="form-field flex">
+            <label htmlFor="fonction">Fonction et grade:</label>
+            <input autoComplete="off" required type="text" name="fonction" id="fonction" value={fonction} onChange={(e) => setFonction(e.target.value)} placeholder=" Fonction et Grade" />
+          </div>
+
+          <div className="form-field flex">
+            <label htmlFor="université">Université/Institution/Organisme ou laboratoire de recherche :<span style={{ color: "white" }}>......</span></label>
+            <input autoComplete="off" required type="text" name="université" id="université" value={université} onChange={(e) => setUniversité(e.target.value)} placeholder="" />
+          </div>
+
+
+
+
+          {/* cheackbox theme */}
+
+          <div className="form-field flex " >
+            <div style={{ color: "rgb(70, 68, 68)", margin: "1rem" }}>
+              <div style={{ marginBottom: "1rem" }}>Thème :</div>
+              <div >
+                <label htmlFor="theme1"> Valorisation des ressources naturelles en Nutrition fonctionnelle <span style={{ color: "white" }}>.....</span></label>
+                <input className='cheakbox' type="radio" id="theme1" name="theme" value="Theme 1" onChange={(e) => setTheme(e.target.value)} /><br />
+                <label htmlFor="theme2">L’exploitation durable des ressources naturelles en Agroalimentaire</label>
+                <input className='cheakbox' type="radio" id="theme2" name="theme" value="Theme 2" onChange={(e) => setTheme(e.target.value)} />
+              </div>
             </div>
           </div>
-          <button type="submit" className="submit">
+
+
+
+          {/* cheakbox communication  */}
+
+          <div className=" form-field flex">
+            <div style={{ color: "rgb(70, 68, 68)", margin: "1rem" }}>
+              <div style={{ marginBottom: "1rem" }}>Communication :</div>
+              <div >
+                <label htmlFor="oral">Orale<span style={{ color: "white" }}>........</span> </label>
+                <input className='cheakbox' type="radio" id="oral" name="communicationMethod" value="Orale" onChange={(e) => setCommunicationMethod(e.target.value)} /> <br />
+                <label htmlFor="display">Par affiche</label>
+                <input className='cheakbox' type="radio" id="display" name="communicationMethod" value="Affichage" onChange={(e) => setCommunicationMethod(e.target.value)} />
+              </div>
+            </div>
+          </div>
+
+          {/* Soumission */}
+
+
+          <div className=" fichier flex ">
+
+            <div className='' style={{ color: "rgb(70, 68, 68)" }}>  Fichier de soumission :</div>
+
+            <div {...getRootProps()} >
+              <input {...getInputProps()} />
+              <button type="button" className="submit"> Choisir un fichier </button>
+            </div>
+          </div>
+
+               {/* submit */}
+
+          <button type="submit" className="submit2">
             Submit
           </button>
 
           {submissionMessage && <p>{submissionMessage}</p>}
           {submissionMessage === 'Votre formulaire a été soumis avec succès !' && (
-            <p style={{ color: 'green' }}>Merci ! Votre formulaire a été soumis avec succès.</p>
+            <p style={{ color: 'rgb(70, 68, 68)'}}>Merci ! Votre formulaire a été soumis avec succès.</p>
           )}
         </form>
       </section>

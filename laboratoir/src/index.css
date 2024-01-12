@@ -35,9 +35,9 @@
     border: 2px solid  rgba(63, 63, 70, 0.4);
     width: 90%;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; 
     background-color: #fff;
-    padding: 0 var(--container-padding);
+    padding: 0 var(--container-padding); 
   }
   
 
